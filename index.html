@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Prompt Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen font-sans transition-colors duration-300" id="body">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-center mb-6">AI Prompt Generator</h1>
+    <div id="section-buttons" class="flex flex-wrap gap-4 justify-center mb-6"></div>
+    <div id="form" class="space-y-6"></div>
+    <div class="text-center mt-8">
+      <button id="generateBtn" onclick="generatePrompt()" class="bg-blue-400 text-white px-6 py-2 rounded-md hover:bg-blue-500">Generate Prompt</button>
+    </div>
+  </div>
+
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+    <div class="bg-gray-800 text-white p-6 rounded-lg shadow-xl max-w-2xl w-full">
+      <h2 class="text-xl font-semibold mb-4" id="modalTitle">Generated Prompt</h2>
+      <pre id="output" class="bg-gray-700 p-4 rounded border border-gray-600 whitespace-pre-wrap"></pre>
+      <div class="mt-4 space-x-2">
+        <button onclick="copyPrompt()" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700" id="copyBtn">Copy</button>
+        <button onclick="clearAllInputs()" class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700" id="clearBtn">Clear All</button>
+        <button onclick="closeModal()" class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-500" id="closeBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
